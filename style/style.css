@@ -47,6 +47,7 @@ body {
 }
 
 .container {
+    
     width: var(--primary-width);
     padding-right: 15px;
     padding-left: 15px;
@@ -279,14 +280,39 @@ body {
     height: 581px;
     background-color: var(--primary-white-color);
 
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform var(--time-transition) var(--function-bezier);
+    animation-name: animModal;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
 }
 
 .modal-btn{
     position: absolute;
     top:8px;
     right:8px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    fill:teal;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/*  aniation modal screan   */
+
+@keyframes animModal{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        opacity: 0.6;
+        background-color: yellowgreen;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 
@@ -647,19 +673,12 @@ footer .item:not(:last-child) {
 
 .portf-btn:focus,
 .portf-btn:hover {
-    padding: 6px 22px;
+    
     cursor: pointer;
     background-color: var(--accent-color);
     color: var(--primary-white-color);
-    font-family: var(--primary-font-famaly);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 26px;
-    letter-spacing: 0.03em;
-    text-align: center;
-    outline: transparent;
-    border: var(--accent-color);
-    border-radius: 4px;
+    
+    
 }
 
 .portf-btn {
@@ -675,6 +694,15 @@ footer .item:not(:last-child) {
     outline: transparent;
     border: #F5F4FA;
     border-radius: 4px;
+
+
+
+    /*
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+     0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    
+    */
 }
 
 .portfolio-btn {
@@ -729,7 +757,10 @@ footer .item:not(:last-child) {
 .prt-foto-prt:focus .about-foto-div,
 .prt-foto-prt:hover .about-foto-div{
     opacity: 1;
-    
+    animation-name: animationPortfolioCard;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
 
 .prt-foto-prt-div{
@@ -745,6 +776,7 @@ footer .item:not(:last-child) {
     opacity: 0;
     background-color: rgba(33, 150, 243, 0.9);
 
+    
 
     /*box-shadow: none;*/
 }
@@ -763,6 +795,20 @@ footer .item:not(:last-child) {
     letter-spacing: 0.03em;
 }
 
+
+/* animation card portfolio */
+
+@keyframes animationPortfolioCard{
+    0%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 0.6;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 
 
