@@ -58,8 +58,7 @@ body {
 /* header */
 
 .header-scn {
-    padding-top: 17px;
-    padding-bottom: 17px;
+   
     border-bottom: 1px solid #ECECEC;
 }
 
@@ -72,6 +71,7 @@ body {
     display: flex;
     margin-left: auto;
     align-items: center;
+
     font-family: Roboto;
     font-weight: 500;
     font-size: 14px;
@@ -111,29 +111,34 @@ body {
     text-align: left;
 }
 
-.link {
-    color: var(--title-text-color);
+.link-header:hover,
+.link-header:focus {
+    color: var(--accent-color);  
 }
 
-.link:hover,
-.link:focus {
-    color: var(--accent-color);
-}
-
-.link:active {
+.link-header:active {
     color: rgb(255, 0, 0);
 }
 
-.current{
+.link-header{
     position: relative;
+    color: var(--title-text-color);
+    padding: 32px 0;
 }
 
-.current::after{
+.link-header.current::after,
+.link-header:hover::after,
+.link-header:focus::after{
+    opacity: 1;
+}
+
+.link-header::after{
     content: '';
     position: absolute;
-   
+    opacity: 0;
+
     display: block;
-    bottom:-31px;
+    bottom:-1px;
     width: 100%;
     height: 4px;
     border-radius: 2px;
@@ -159,6 +164,8 @@ body {
 .conect-address {
     display: inline-flex;
     align-items: center;
+    padding: 32px 0;
+    
     font-family: Roboto;
     text-decoration: none;
     font-family: var(--primary-font-famaly);
@@ -177,9 +184,12 @@ body {
     fill: var(--connect-color);
 }
 
+.conect-address:hover,
+.conect-address:focus,
 .conect-address:hover .icon-header,
 .conect-address:focus .icon-header {
     fill: var(--accent-color);
+     color: var(--accent-color);
 }
 
 
@@ -268,12 +278,13 @@ body {
     width: 528px;
     height: 581px;
     background-color: var(--primary-white-color);
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--time-transition) var(--function-bezier);
 }
 
 .modal-btn{
     position: absolute;
-
-
     top:8px;
     right:8px;
 }
@@ -708,7 +719,6 @@ footer .item:not(:last-child) {
 
 .prt-foto-prt:focus,
 .prt-foto-prt:hover {
-    
     background: #FFFFFF;
     
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -722,13 +732,21 @@ footer .item:not(:last-child) {
     
 }
 
+.prt-foto-prt-div{
+    position: relative;
+
+}
+
 .about-foto-div{
     position: absolute;
     display: block;
     left: 0;
     top: 0;
     opacity: 0;
-    
+    background-color: rgba(33, 150, 243, 0.9);
+
+
+    /*box-shadow: none;*/
 }
 
 
@@ -744,6 +762,11 @@ footer .item:not(:last-child) {
     line-height: 28px;
     letter-spacing: 0.03em;
 }
+
+
+
+
+
 
 
 /* our projects */
