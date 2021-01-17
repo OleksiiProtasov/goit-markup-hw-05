@@ -779,8 +779,6 @@ footer .item:not(:last-child) {
     transition-property: box-shadow;
     transition-duration:var(--trans-duration);
     transition-timing-function: var(--trasn-time-funk);
-
-    
 }
 
 .prt-foto-prt:focus,
@@ -800,7 +798,6 @@ footer .item:not(:last-child) {
 
 .prt-foto-prt-div{
     position: relative;
-
     overflow: hidden;
 }
 
