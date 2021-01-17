@@ -152,9 +152,10 @@ body {
     border-radius: 2px;
     background-color: var(--accent-color);
 
-    transition-property: color;
+    transition-property: background-color, opacity;
     transition-duration: var(--trans-duration);
     transition-timing-function: var(--trasn-time-funk);
+    transition-delay: 250ms;
     
 }
 
